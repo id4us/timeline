@@ -1,3 +1,4 @@
+import 'package:Timeline/login_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
@@ -28,6 +29,5 @@ Future<String> signInWithGoogle() async {
 
 void signOutGoogle() async {
   await googleSignIn.signOut();
-
   print("User Sign Out");
 }
