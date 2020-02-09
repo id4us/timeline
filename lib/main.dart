@@ -1,3 +1,4 @@
+import 'package:Timeline/authentication/signing_in.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'login_page.dart';
@@ -9,7 +10,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Timeline',
+//      title: 'Timeline',
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -20,7 +21,19 @@ class MyApp extends StatelessWidget {
         // or simply save your changes to "hot reload" in a Flutter IDE).
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
+        textTheme: TextTheme(
+          body1: TextStyle(
+            fontSize: 20,
+            fontStyle: FontStyle.italic,
+            color: Colors.blueGrey
+
+          ),
+        ) ,
         primarySwatch: Colors.blueGrey,
+        appBarTheme: AppBarTheme(
+          color: Colors.black
+        )
+
       ),
       home: LoginPage(),
     );

@@ -1,16 +1,19 @@
+import 'package:Timeline/login_page.dart';
 import 'package:flutter/material.dart';
 import 'package:Timeline/authentication/sign_in.dart';
 
-class FirstScreen extends StatelessWidget {
+class FirstScreen extends StatefulWidget {
+  @override
+  _FirstScreenState createState() => _FirstScreenState();
+}
+
+class _FirstScreenState extends State<FirstScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Welcome to timeline'),
-        actions: <Widget>[
-          signoutButton()
-        ],
-
+        actions: <Widget>[signoutButton()],
       ),
       body: Container(color: Colors.white12),
     );
@@ -20,9 +23,10 @@ class FirstScreen extends StatelessWidget {
     return IconButton(
       icon: Icon(Icons.exit_to_app),
       tooltip: "Logout",
-      splashColor: Colors.yellow,
+      splashColor: Colors.grey,
       onPressed: () {
         signOutGoogle();
+        Text('you have been logged out');
       },
     );
   }
