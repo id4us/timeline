@@ -1,3 +1,4 @@
+import 'package:Timeline/common/MyBottomNavBar.dart';
 import 'package:Timeline/screens/login_page.dart';
 import 'package:Timeline/styles.dart';
 import 'package:flutter/cupertino.dart';
@@ -10,41 +11,53 @@ class FirstScreen extends StatefulWidget {
 }
 
 class _FirstScreenState extends State<FirstScreen> {
-  get bottomAppBarContents => Row();
+  int _selectedIndex = 0;
+  static const TextStyle optionStyle =
+      TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
+  static const List<Widget> _widgetOptions = <Widget>[
+    Text(
+      'Index 0: Home',
+      style: optionStyle,
+    ),
+    Text(
+      'Index 1: My Stories',
+      style: optionStyle,
+    ),
+    Text(
+      'Index 2: My Account',
+      style: optionStyle,
+    ),
+  ];
+
+  Widget _selectPage(int index) {
+    _selectedIndex = index;
+    if (_selectedIndex == 1) {
+      return LoginPage();
+    }
+    return FirstScreen();
+  }
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Welcome to your Timeline', style: Styles.boldText,),
-        backgroundColor: Colors.blueGrey,
-        actions: <Widget>[signoutButton()],
-      ),
-      body: Container(color: Colors.white12),
-      bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.blueGrey,
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.home,
-              color: Colors.black,
-            ),
-            title: Text('Home', style: Styles.boldText),
+        appBar: AppBar(
+          title: const Text(
+            'Welcome to your Timeline',
+            style: Styles.boldText,
           ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              CupertinoIcons.book_solid,
-              color: Colors.black,
-            ),
-            title: Text('My stories', style: Styles.boldText),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(CupertinoIcons.person_solid, color: Colors.black),
-            title: Text('My Account', style: Styles.boldText),
-          ),
-        ],
-      ),
-    );
+          backgroundColor: Colors.blueGrey,
+          actions: <Widget>[signoutButton()],
+        ),
+        body: Container(
+            color: Colors.white12,
+            child: _widgetOptions.elementAt(_selectedIndex)),
+        bottomNavigationBar: MyBottomNavBar ());
   }
 
   Widget signoutButton() {
