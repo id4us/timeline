@@ -1,4 +1,6 @@
 import 'package:Timeline/authentication/signing_in.dart';
+import 'package:Timeline/screens/account_details.dart';
+import 'package:Timeline/screens/first_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'screens/login_page.dart';
@@ -27,7 +29,13 @@ class MyApp extends StatelessWidget {
         )
 
       ),
-      home: LoginPage(),
+//      home: LoginPage(),
+      initialRoute: '/',
+      routes: {
+        '/' : (context) => LoginPage(),
+        '/firstScreen': (context) => FirstScreen(),
+        '/accountDetails': (context) => AccountDetails()
+      },
     );
   }
 }

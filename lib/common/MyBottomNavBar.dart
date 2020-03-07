@@ -10,28 +10,58 @@ class MyBottomNavBar extends StatefulWidget {
 class _MyBottomNavBarState extends State<MyBottomNavBar> {
   @override
   Widget build(BuildContext context) {
-    return new BottomNavigationBar(
-      backgroundColor: Colors.blueGrey,
-      items: const <BottomNavigationBarItem>[
-        BottomNavigationBarItem(
-          icon: Icon(
-            Icons.home,
-            color: Colors.black,
+
+    return Container(
+      child: Row(
+        children: <Widget>[
+          IconButton(
+            icon: Icon(Icons.home,size: 22.0,),
+            onPressed: (){
+              Navigator.pushReplacementNamed(context, '/');
+            },
           ),
-          title: Text('Home', style: Styles.boldText),
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(
-            CupertinoIcons.book_solid,
-            color: Colors.black,
+          IconButton(
+            icon: Icon(CupertinoIcons.book_solid, size: 22.0 ),
+            onPressed: (){
+              Navigator.pushReplacementNamed(context, '/firstScreen');
+            },
           ),
-          title: Text('My stories', style: Styles.boldText),
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(CupertinoIcons.person_solid, color: Colors.black),
-          title: Text('My Account', style: Styles.boldText),
-        ),
-      ],
+          IconButton(
+            icon: Icon(CupertinoIcons.person_solid, size: 22.0 ),
+            onPressed: (){
+              Navigator.pushReplacementNamed(context, '/accountDetails');
+            },
+          )
+
+        ],
+
+      ),
     );
   }
 }
+
+/**
+    return new BottomNavigationBar(
+    backgroundColor: Colors.blueGrey,
+    items: const <BottomNavigationBarItem>[
+    BottomNavigationBarItem(
+    icon: Icon(
+    Icons.home,
+    color: Colors.black,
+    ),
+    title: Text('Home', style: Styles.boldText),
+    ),
+    BottomNavigationBarItem(
+    icon: Icon(
+    CupertinoIcons.book_solid,
+    color: Colors.black,
+    ),
+    title: Text('My stories', style: Styles.boldText),
+    ),
+    BottomNavigationBarItem(
+    icon: Icon(CupertinoIcons.person_solid, color: Colors.black),
+    title: Text('My Account', style: Styles.boldText),
+    ),
+    ],
+    );
+ */
