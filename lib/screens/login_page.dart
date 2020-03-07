@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'first_screen.dart';
-import 'authentication/sign_in.dart';
+import '../authentication/sign_in.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -8,6 +8,8 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

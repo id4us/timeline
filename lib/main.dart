@@ -1,7 +1,7 @@
 import 'package:Timeline/authentication/signing_in.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'login_page.dart';
+import 'screens/login_page.dart';
 
 void main() => runApp(MyApp());
 
