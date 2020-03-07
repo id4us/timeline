@@ -11,53 +11,21 @@ class FirstScreen extends StatefulWidget {
 }
 
 class _FirstScreenState extends State<FirstScreen> {
-  int _selectedIndex = 0;
-  static const TextStyle optionStyle =
-      TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
-  static const List<Widget> _widgetOptions = <Widget>[
-    Text(
-      'Index 0: Home',
-      style: optionStyle,
-    ),
-    Text(
-      'Index 1: My Stories',
-      style: optionStyle,
-    ),
-    Text(
-      'Index 2: My Account',
-      style: optionStyle,
-    ),
-  ];
-
-  Widget _selectPage(int index) {
-    _selectedIndex = index;
-    if (_selectedIndex == 1) {
-      return LoginPage();
-    }
-    return FirstScreen();
-  }
-
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
           title: const Text(
             'Welcome to your Timeline',
-            style: Styles.boldText,
+            style: Styles.headlineText,
           ),
           backgroundColor: Colors.blueGrey,
           actions: <Widget>[signoutButton()],
         ),
         body: Container(
-            color: Colors.white12,
-            child: _widgetOptions.elementAt(_selectedIndex)),
-        bottomNavigationBar: MyBottomNavBar ());
+          color: Colors.white12,
+        ),
+        bottomNavigationBar: MyBottomNavBar());
   }
 
   Widget signoutButton() {

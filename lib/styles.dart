@@ -10,7 +10,7 @@ abstract class Styles {
   static const headlineText = TextStyle(
     color: Color.fromRGBO(0, 0, 0, 0.8),
     fontFamily: 'NotoSans',
-    fontSize: 32.0,
+    fontSize: 20.0,
     fontStyle: FontStyle.normal,
     fontWeight: FontWeight.bold,
   );
