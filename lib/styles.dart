@@ -15,6 +15,13 @@ abstract class Styles {
     fontWeight: FontWeight.bold,
   );
 
+  static const appNameBig = TextStyle(
+    color: Color.fromRGBO(0, 0, 0, 0.8),
+    fontFamily: 'NotoSans',
+    fontSize: 30.0,
+    fontStyle: FontStyle.normal,
+    fontWeight: FontWeight.bold,
+  );
   static const minorText = TextStyle(
     color: Color.fromRGBO(128, 128, 128, 1.0),
     fontFamily: 'NotoSans',
@@ -28,9 +35,8 @@ abstract class Styles {
     fontFamily: 'monospace',
     fontSize: 16.0,
     fontStyle: FontStyle.normal,
-    fontWeight: FontWeight.w400,
+    fontWeight: FontWeight.bold,
   );
-
 
   static const headlineName = TextStyle(
     color: Color.fromRGBO(0, 0, 0, 0.9),

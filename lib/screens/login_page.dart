@@ -1,3 +1,4 @@
+import 'package:Timeline/styles.dart';
 import 'package:flutter/material.dart';
 import 'first_screen.dart';
 import '../authentication/sign_in.dart';
@@ -9,7 +10,6 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,10 +20,12 @@ class _LoginPageState extends State<LoginPage> {
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              SizedBox(height: 50),
               Text(
-                'Welcome to Timeline' // This inherits the textStyle from context
+                'Welcome to Timeline',
+                style: Styles.appNameBig
+
               ),
+              SizedBox(height: 100),
               _signInButton(),
             ],
           ),

@@ -1,8 +1,8 @@
-import 'package:Timeline/authentication/signing_in.dart';
 import 'package:Timeline/screens/account_details.dart';
 import 'package:Timeline/screens/first_screen.dart';
+import 'package:Timeline/screens/my_stories_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:firebase_auth/firebase_auth.dart';
+
 import 'screens/login_page.dart';
 
 void main() => runApp(MyApp());
@@ -14,26 +14,20 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
 //      title: 'Timeline',
       theme: ThemeData(
-
-        textTheme: TextTheme(
-          body1: TextStyle(
-            fontSize: 20,
-            fontStyle: FontStyle.italic,
-            color: Colors.blueGrey
-
+          textTheme: TextTheme(
+            body1: TextStyle(
+                fontSize: 20,
+                fontStyle: FontStyle.italic,
+                color: Colors.blueGrey),
           ),
-        ) ,
-        primarySwatch: Colors.blueGrey,
-        appBarTheme: AppBarTheme(
-          color: Colors.blueGrey
-        )
-
-      ),
+          primarySwatch: Colors.blueGrey,
+          appBarTheme: AppBarTheme(color: Colors.blueGrey)),
 //      home: LoginPage(),
       initialRoute: '/',
       routes: {
-        '/' : (context) => LoginPage(),
+        '/': (context) => LoginPage(),
         '/firstScreen': (context) => FirstScreen(),
+        '/myStories': (context) => MyStoriesScreen(),
         '/accountDetails': (context) => AccountDetails()
       },
     );
@@ -42,15 +36,6 @@ class MyApp extends StatelessWidget {
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
-
-  // This widget is the home page of your application. It is stateful, meaning
-    // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
 
   final String title;
 
@@ -63,7 +48,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-
     final emailField = TextField(
       obscureText: false,
       style: style,
@@ -87,7 +71,10 @@ class _MyHomePageState extends State<MyHomePage> {
       borderRadius: BorderRadius.circular(30.0),
       color: Color(0xff01A0C7),
       child: MaterialButton(
-        minWidth: MediaQuery.of(context).size.width,
+        minWidth: MediaQuery
+            .of(context)
+            .size
+            .width,
         padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
         onPressed: () {},
         child: Text("Login",

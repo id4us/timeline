@@ -1,4 +1,6 @@
 import 'package:Timeline/common/MyBottomNavBar.dart';
+import 'package:Timeline/common/app_bar.dart';
+import 'package:Timeline/main.dart';
 import 'package:Timeline/screens/login_page.dart';
 import 'package:Timeline/styles.dart';
 import 'package:flutter/cupertino.dart';
@@ -14,17 +16,10 @@ class _FirstScreenState extends State<FirstScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: const Text(
-            'Welcome to your Timeline',
-            style: Styles.headlineText,
-          ),
-          backgroundColor: Colors.blueGrey,
-          actions: <Widget>[signoutButton()],
-        ),
         body: Container(
           color: Colors.white12,
         ),
+        appBar: MyAppBar(),
         bottomNavigationBar: MyBottomNavBar());
   }
 
@@ -35,6 +30,7 @@ class _FirstScreenState extends State<FirstScreen> {
       splashColor: Colors.grey,
       onPressed: () {
         signOutGoogle();
+        Navigator.pushReplacementNamed(context, '/');
         Text('you have been logged out');
       },
     );

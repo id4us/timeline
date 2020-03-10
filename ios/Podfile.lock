@@ -145,7 +145,7 @@ SPEC CHECKSUMS:
   FirebaseCore: 66bdef3b310a026880e2a5bc8aa586ab62ce4543
   FirebaseDynamicLinks: 25fc45fdf2557ee2ee630999c301245d8911792e
   FirebaseInstanceID: 27bed93a59b6685f5c3e0c028a878a764fd75c33
-  Flutter: 58dd7d1b27887414a370fcccb9e645c08ffd7a6a
+  Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
   google_sign_in: 27e70a98b529f0b076d4b19f231b81da28b1750b
   GoogleAppMeasurement: 51d8d9ea48f0ca44484d29cfbdef976fbd4fc336
   GoogleSignIn: 7ff245e1a7b26d379099d3243a562f5747e23d39

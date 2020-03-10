@@ -10,10 +10,10 @@ class MyBottomNavBar extends StatefulWidget {
 class _MyBottomNavBarState extends State<MyBottomNavBar> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 65,
-      padding: EdgeInsets.only(top: 5, bottom: 10),
-      color: Colors.blueGrey,
+    return SafeArea(
+//      height: 65,
+//      padding: EdgeInsets.only(top: 5, bottom: 15),
+//      color: Colors.blueGrey,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
@@ -29,7 +29,7 @@ class _MyBottomNavBarState extends State<MyBottomNavBar> {
           IconButton(
             icon: Icon(CupertinoIcons.book_solid, size: 45.0),
             onPressed: () {
-              Navigator.pushReplacementNamed(context, '/firstScreen');
+              Navigator.pushReplacementNamed(context, '/myStories');
             },
           ),
           IconButton(
